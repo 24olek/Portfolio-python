@@ -1,11 +1,13 @@
 def editorQuiz():
     file = open("quiz.txt", "w")
-    foo = ""
+    fooQuiz = ""
     print("""Welcome to "Quiz" editor.
 To avoid losing content of current "Quiz" data, exit the program.
 
 """)
-    file.write(input("Introduce the name of episode: \n"))
+    input("Press any key to continue. \n")
+    file.write(input("Introduce the name of episode: "))
+    file.write("\n")
     while fooQuiz != "2":
         fooQuiz = input("""1. Add a question.
 2. Exit the editor.\n""")
@@ -37,7 +39,7 @@ If you choose to edit data, every content of past content is lost.\n
         break
     elif bar == "1":
         editorQuiz()
-input("enter")
+input()
 
 
 

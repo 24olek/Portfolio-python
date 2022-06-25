@@ -34,9 +34,10 @@ def welcome(title):
 
 
 def main():
+    import pickle
+    nickname = input("What is your name?")
     quest_file = open_file("quiz.txt", "r")
     title = read_line(quest_file)
-    welcome(title)
     score = 0
     category, question, anwsers, correct, explanation = next_block(quest_file)
     while category:
@@ -56,6 +57,11 @@ def main():
     quest_file.close()
     print("This was last question.")
     print("Your score: ", score)
+    open("scoresquiz.dat", "ab+")
+    yourscore  = nickname + str(score)
+    print(yourscore)
+    
+    
 
 main()
     
